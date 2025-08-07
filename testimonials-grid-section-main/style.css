@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+
+:root{
+--purple-50: hsl(260, 100%, 95%);
+--Purple-300: hsl(264, 82%, 80%);
+--Purple-500: hsl(263, 55%, 52%);
+--White: hsl(0, 0%, 100%);
+--Grey-100: hsl(214, 17%, 92%);
+--Grey-200: hsl(0, 0%, 81%);
+--Grey-400: hsl(224, 10%, 45%);
+--Grey-500: hsl(217, 19%, 35%);
+--Dark-blue: hsl(219, 29%, 14%);
+--Black: hsl(0, 0%, 7%);
+}
+
+body{
+    margin: 0;
+    padding: 7rem 9.5rem ;
+    box-sizing: border-box;
+    font-family: "Barlow Semi Condensed", sans-serif;
+   
+
+    
+}
+main{
+    display: grid;
+    gap: 2.5rem;
+    grid-template-areas: "Daniel Daniel Jonathan Kira"
+    "Jeanette Patrick Patrick  Kira" ;
+    grid-template-columns: repeat(4, 1fr);
+}
+.Box{
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px -1px 9px 1px rgba(0,0,0,0.75);
+}
+img{
+    border-radius: 50%;
+    border: 2px solid var(--White);
+}
+
+.bslk{
+    display: flex;
+    align-items: center;
+}
+.name{
+    padding: 1rem;
+}
+
+/* Başlıklar (h3) */
+.Box h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+/* Açıklama metinleri (p) */
+.Box p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* İsim ve rol kısmı */
+.name p {
+  font-size: 1rem;
+  line-height: 1.4;
+  opacity: 0.8;
+  margin: 0;
+}
+
+
+
+
+.Daniel{
+    background-color: var(--Purple-500);
+    grid-area: Daniel;
+    color: var(--White);
+}
+.Jonathan{
+    background-color: var(--Grey-500);
+    grid-area:Jonathan;
+    color: var(--White);
+}
+.Jeanette{
+grid-area:Jeanette;
+color: var(--Grey-400);
+}
+
+.Patrick{
+    background-color: var(--Dark-blue);
+    grid-area:Patrick;
+    color: var(--White);
+
+
+}
+.Patrick img{
+  border: 2px solid var(--Purple-300);
+}
+.Kira{
+    grid-area:Kira;
+    color: var(--Grey-400);
+
+}
+
+@media (max-width: 375px) {
+  body {
+    padding: 2rem;
+  }
+
+  main {
+    grid-template-areas:
+      "Daniel"
+      "Jonathan"
+      "Jeanette"
+      "Patrick"
+      "Kira";
+    grid-template-columns: 1fr;
+  }
+  .Box h3{
+    font-size: 1.3rem;
+  }
+  .Box p {
+    font-size: 0.8rem;
+  }
+  img{
+    height: 1.7rem;
+  }
+  .name p{
+    font-size: 0.7rem;
+  }
+}
