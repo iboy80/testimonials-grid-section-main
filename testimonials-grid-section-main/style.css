@@ -13,23 +13,39 @@
 --Dark-blue: hsl(219, 29%, 14%);
 --Black: hsl(0, 0%, 7%);
 }
+*,
+    *::after,
+    *::before{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+body{      
+      min-height: 100vh;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "Barlow Semi Condensed", sans-serif;
+      background-color: var(--Grey1);
 
-body{
-    margin: 0;
-    padding: 7rem 9.5rem ;
-    box-sizing: border-box;
-    font-family: "Barlow Semi Condensed", sans-serif;
+
    
 
     
 }
-main{
+.container{
     display: grid;
-    gap: 2.5rem;
+      grid-template-columns: 280px 280px 280px 280px;
+      grid-template-rows: auto auto;
+      gap: 2rem;
     grid-template-areas: "Daniel Daniel Jonathan Kira"
     "Jeanette Patrick Patrick  Kira" ;
-    grid-template-columns: repeat(4, 1fr);
+  
+
 }
+
 .Box{
     padding: 2rem;
     border-radius: 1rem;
@@ -38,6 +54,7 @@ main{
 img{
     border-radius: 50%;
     border: 2px solid var(--White);
+    width: 2.5rem;
 }
 
 .bslk{
@@ -50,22 +67,20 @@ img{
 
 /* Başlıklar (h3) */
 .Box h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  line-height: 1;
+      font-size: 1.3rem;
+      margin-top: 1.2rem;
+      font-weight: 500;
 }
 
 /* Açıklama metinleri (p) */
 .Box p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+   font-size: 0.9rem;
+  margin-top: 1rem;
 }
 
 /* İsim ve rol kısmı */
 .name p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.4;
   opacity: 0.8;
   margin: 0;
@@ -105,12 +120,11 @@ color: var(--Grey-400);
 
 }
 
-@media (max-width: 375px) {
-  body {
+@media (max-width: 765px) {
+  body{
     padding: 2rem;
   }
-
-  main {
+  .container {
     grid-template-areas:
       "Daniel"
       "Jonathan"
@@ -119,16 +133,5 @@ color: var(--Grey-400);
       "Kira";
     grid-template-columns: 1fr;
   }
-  .Box h3{
-    font-size: 1.3rem;
-  }
-  .Box p {
-    font-size: 0.8rem;
-  }
-  img{
-    height: 1.7rem;
-  }
-  .name p{
-    font-size: 0.7rem;
-  }
+
 }
